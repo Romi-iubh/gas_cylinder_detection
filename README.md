@@ -18,3 +18,5 @@ This repository includes:
 - Samples of various types of synthetic datasets
 - A demo notebook to test the model with the provided real images or your own images
 
+**Note**: the demo does not need the synthetic images to work. You may exclude them from your download, should you whish to do so.
+
