@@ -1,4 +1,4 @@
-# gas_cylinder_detection
+# Industrial Gas Cylinder Detection Model
 
 ## Description
 This repository contains a demonstration of the Mask R-CNN model developed during my master's thesis for detecting industrial gas cylinders.  The model was trained using 90% of synthetic images and 10% of real ones.
