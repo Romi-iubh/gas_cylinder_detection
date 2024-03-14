@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Mar 13 01:23:33 2024
+
+@author: deeplearning
+"""
+import tensorflow as tf
+import cv2
+import math
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import colorsys
+import os
+from  utils import *
+
+
+%matplotlib inline
+
+#=============================================================================
+#Load the gas cylinder detection model
+#=============================================================================
+model_dir = "./exported_model"
+imported = tf.saved_model.load(model_dir)
+model_fn = imported.signatures['serving_default']
+
+
+#=============================================================================
+#Load test images
+#=============================================================================
+#load the paths to 10 test images
+test_image_paths = [os.path.join('./test_images',f) for f in os.listdir('./test_images')]
+
+#select one test (change the index to select a different image).
+test_image_path = test_image_paths[7]
+
+#load and plot the image
+original_img = cv2.imread(test_image_path)
+original_img = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
+plt.imshow(original_img)  
+
+#Resize the image to 256x256 and prepare it for inference
+resized_img, resize_info = build_inputs_for_object_detection(original_img, (256,256))
+resized_img = tf.expand_dims(resized_img, axis=0)
+resized_img = tf.cast(resized_img, dtype = tf.uint8)
+#plt.imshow(resized_img[0])  
+
+#=============================================================================
+#Inference
+#=============================================================================
+predictions = model_fn(resized_img)
+
+#=============================================================================
+#Visualization
+#=============================================================================
+
+visualize_prediction(predictions, original_img, resized_img, resize_info)
+
+
+
+
+    
