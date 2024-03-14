@@ -1,21 +1,19 @@
 # Industrial Gas Cylinder Detection Model
-
 ## Description
-This repository contains a demonstration of the Mask R-CNN model developed during my master's thesis for detecting industrial gas cylinders.  The model was trained using 90% of synthetic images and 10% of real ones.
+This repository contains a demonstration of the Mask R-CNN model developed during my master's thesis for detecting industrial gas cylinders. The model was trained using a dataset composed of 90% synthetic images and 10% real ones.
 
-To showcase the model's performance, 10 test real images have been sourced from the internet. Please note that these images differ from the test images used in the thesis work due to confidentiality reasons.
+To showcase the model's performance, we have included 10 real test images sourced from the internet, which differ from the test images used in the thesis due to confidentiality reasons.
 
-You are encouraged to experiment with the model using additional images found online. Suggested search terms include "industrial gas cylinder nitrogen" or "industrial gas cylinder argon". Note that 
+Feel free to experiment with the model using additional online images. Suggested search terms include "industrial gas cylinder nitrogen" or "industrial gas cylinder argon". However, please note that the model was specifically optimized for:
+- Industrial gas cylinders equipped with shrouds
+- Pictures taken from a viewpoint higher than the cylinders
+- "Non-LNG-shape" gas cylinders (containing nitrogen, oxygen, argon, hydrogen, etc.)
+- The model may struggle with images depicting cylinders without shrouds (a poor safety practice) or from lower viewpoints.
 
-However, it is important to keep in mind that the gas cylinder detection model was specifically optimized for:
-- industrial gas cylinders equipped with shrouds
-- pictures with a viewpoint higher than the industrial gas cylinders.
-- "non-LNG-shape" gas cylinders (nitrogen, oxygen, argon, hydrogen, etc).
+## Contents
+This repository includes:
 
-Many online images of industrial gas cylinders may not depict shrouds (which is a very poor safety practice) and might have viewpoints lower than the top of the cylinder. The model may struggle a lot more with these images
+- The trained Mask R-CNN model
+- Samples of various types of synthetic datasets
+- A demo notebook to test the model with the provided real images or your own images
 
-## Content
-We provide:
-- the trained Mask R-CNN model
-- Samples of synthetic dataset of various types
-- A Demo Notebook to test the model with the real images provided (or with your own images)
