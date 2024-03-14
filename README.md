@@ -8,7 +8,8 @@ Feel free to experiment with the model using additional online images. Suggested
 - Industrial gas cylinders equipped with shrouds
 - Pictures taken from a viewpoint higher than the cylinders
 - "Non-LNG-shape" gas cylinders (containing nitrogen, oxygen, argon, hydrogen, etc.)
-- The model may struggle with images depicting cylinders without shrouds (a poor safety practice) or from lower viewpoints.
+
+The model may struggle with images depicting cylinders without shrouds (a poor safety practice) or from lower viewpoints.
 
 ## Contents
 This repository includes:
